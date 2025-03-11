@@ -20,13 +20,12 @@ DB_CONFIG = {
 
 # telegram bot Token
 TELEGRAM_BOT_TOKEN = '7586741604:AAGoZlNFbnI8bFnk_9InTtT9YeVqk4Z2IbI'
-CHAT_ID = '1287793020'
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 # reddit API Config
 reddit = praw.Reddit(
-    client_id="LRTyAe2e76WuQ8cs681zBg",
-    client_secret="PcOj7D_U8--D8ai1TtWBaAo-C8u0Jw",
+    client_id="",
+    client_secret="",
     user_agent="meme-scraper"
 )
 
@@ -96,6 +95,7 @@ def generate_report():
     
     return filename
 
+# use threading to make sure the bot runs concurrently with Flask service
 def run_bot():
     bot.polling(none_stop=True)
 
